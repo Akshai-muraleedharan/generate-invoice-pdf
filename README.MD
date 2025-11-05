@@ -111,10 +111,10 @@ This runs the compiled JavaScript files from dist/.
 
 ## API Endpoints
 
-| Method | Endpoint              | Description           |
-| ------ | ----------------------| ----------------------|
-| POST   | `/api/v1/invoice`     | Create a new invoicer |
-| GET    | `/api/v1/invoice/:id` | Get invoice with id   |
+| Method | Endpoint              | Description                           |
+| ------ | ----------------------| --------------------------------------|
+| POST   | `/api/v1/invoice`     | Create a new invoice and generate pdf |
+| GET    | `/api/v1/invoice/:id` | Get invoice with id  and generate pdf |
 
 
 
