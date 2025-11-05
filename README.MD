@@ -114,7 +114,7 @@ This runs the compiled JavaScript files from dist/.
 | Method | Endpoint              | Description                           |
 | ------ | ----------------------| --------------------------------------|
 | POST   | `/api/v1/invoice`     | Create a new invoice and generate pdf |
-| GET    | `/api/v1/invoice/:id` | Get invoice with id  and generate pdf |
+| GET    | `/api/v1/invoice/:id` | Get invoice by id and generate pdf |
 
 
 

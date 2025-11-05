@@ -7,15 +7,33 @@ exports.router = void 0;
 const express_1 = __importDefault(require("express"));
 const controller_1 = require("../controllers/controller");
 exports.router = express_1.default.Router();
+/**
+ * @swagger
+ *
+ * /invoice:
+ *   post:
+ *      summary: Create new invoice and create pdf
+ *      tags:
+ *         -  Invoice Api's
+ *      responseBody:
+ *         '201':
+ *           description: Return pdf inline
+ *           content:
+ *             application/pdf:
+ *                schema:
+ *                   type: string
+ *                   format: binary
+ *
+ */
 exports.router.post("/invoice", controller_1.createProduct);
 /**
  * @swagger
  *
  * /invoice/{id}:
  *      get:
- *        summary: generate invoice pdf
+ *        summary: Get invoice pdf with ID
  *        tags:
- *          -   Invoice Api's
+ *           -  Invoice Api's
  *        parameters:
  *            - in: path
  *              name: id

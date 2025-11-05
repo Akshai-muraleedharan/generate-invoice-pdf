@@ -54,7 +54,7 @@ export const createProduct = async (req: Request, res: Response<{ success: boole
 
         res.setHeader('Content-Type', 'application/pdf');
         // Change 'attachment' to 'inline'
-        res.setHeader('Content-Disposition', `attachment; filename="invoice_A5_${newInvoice._id}.pdf"`);
+        res.setHeader('Content-Disposition', `inline; filename="invoice_A5_${newInvoice._id}.pdf"`);
 
 
         pdfGenerate(res, newInvoice,)
@@ -93,7 +93,7 @@ export const generatePdf = async (req: Request<{ id: string }>, res: Response<{ 
 
         res.setHeader('Content-Type', 'application/pdf');
         // Change 'attachment' to 'inline'
-        res.setHeader('Content-Disposition', `attachment; filename="invoice_A5_${findInvoice._id}.pdf"`);
+        res.setHeader('Content-Disposition', `inline; filename="invoice_A5_${findInvoice._id}.pdf"`);
 
         pdfGenerate(res, findInvoice,)
 

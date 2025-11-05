@@ -17,7 +17,7 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const connectDB = () => __awaiter(void 0, void 0, void 0, function* () {
-    const MongodbConnection = process.env.MONGOURI;
+    const MongodbConnection = process.env.MONGOURI || "mongodb://localhost:27017/shopInvoice";
     try {
         yield mongoose_1.default.connect(MongodbConnection);
         console.log("Mongodb connected successfully");

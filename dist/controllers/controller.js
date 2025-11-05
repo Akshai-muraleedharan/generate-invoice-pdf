@@ -34,7 +34,7 @@ const createProduct = (req, res, next) => __awaiter(void 0, void 0, void 0, func
         const newInvoice = new invoiceModel_1.invoiceModel({
             shopName: "EduMart Stationery Store",
             address: "Shop No. 14, Arcot Main Road, Vadapalani, Chennai – 600026",
-            phoneNumber: "+91 98765 11223",
+            phoneNumber: "+91 9876511223",
             products: slicedProductArr,
             invoiceNumber: generateInvoiceNum,
             paymentMethod: paymentMethod,
@@ -43,7 +43,7 @@ const createProduct = (req, res, next) => __awaiter(void 0, void 0, void 0, func
         yield newInvoice.save();
         res.setHeader('Content-Type', 'application/pdf');
         // Change 'attachment' to 'inline'
-        res.setHeader('Content-Disposition', `attachment; filename="invoice_A5_${newInvoice._id}.pdf"`);
+        res.setHeader('Content-Disposition', `inline; filename="invoice_A5_${newInvoice._id}.pdf"`);
         (0, utilPdfGenerete_1.pdfGenerate)(res, newInvoice);
     }
     catch (error) {
@@ -70,7 +70,7 @@ const generatePdf = (req, res, next) => __awaiter(void 0, void 0, void 0, functi
         }
         res.setHeader('Content-Type', 'application/pdf');
         // Change 'attachment' to 'inline'
-        res.setHeader('Content-Disposition', `attachment; filename="invoice_A5_${findInvoice._id}.pdf"`);
+        res.setHeader('Content-Disposition', `inline; filename="invoice_A5_${findInvoice._id}.pdf"`);
         (0, utilPdfGenerete_1.pdfGenerate)(res, findInvoice);
     }
     catch (error) {

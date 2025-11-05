@@ -5,7 +5,7 @@ dotenv.config()
 
 export const connectDB = async (): Promise<void> => {
 
-    const MongodbConnection = process.env.MONGOURI
+    const MongodbConnection = process.env.MONGOURI || "mongodb://localhost:27017/shopInvoice"
 
     try {
 
