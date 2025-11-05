@@ -7,7 +7,7 @@ import { Types } from "mongoose";
 import { pdfGenerate } from "../utils/utilPdfGenerete";
 
 
-export const createProduct = async (req: Request, res: Response<{ success: boolean, message: string }>, next: NextFunction): Promise<void> => {
+export const createInvoice = async (req: Request, res: Response<{ success: boolean, message: string }>, next: NextFunction): Promise<void> => {
 
     try {
 
@@ -65,7 +65,7 @@ export const createProduct = async (req: Request, res: Response<{ success: boole
 
 }
 
-export const generatePdf = async (req: Request<{ id: string }>, res: Response<{ success: boolean, message: string }>, next: NextFunction): Promise<void> => {
+export const getGeneratePdf = async (req: Request<{ id: string }>, res: Response<{ success: boolean, message: string }>, next: NextFunction): Promise<void> => {
     try {
         const { id } = req.params;
 

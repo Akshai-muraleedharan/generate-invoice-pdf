@@ -1,6 +1,6 @@
 import express from "express";
 import type { Router } from "express";
-import { createProduct, generatePdf } from "../controllers/controller"
+import { createInvoice, getGeneratePdf } from "../controllers/controller"
 
 export const router: Router = express.Router();
 
@@ -23,7 +23,7 @@ export const router: Router = express.Router();
  *  
  */
 
-router.post("/invoice", createProduct)
+router.post("/invoice", createInvoice)
 
 /**
  * @swagger
@@ -52,4 +52,4 @@ router.post("/invoice", createProduct)
  *         '404':
           description: Invoice not found              
  */
-router.get("/invoice/:id", generatePdf)
+router.get("/invoice/:id", getGeneratePdf)
